@@ -9,12 +9,13 @@
 </head>
 <body class>
     <!-- Navbar -->
-     <nav class="w-full bg-[#1A0B2E]">
+     <nav class="w-full bg-[#1A0B2E] relative">
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             <div class="text-5xl font-bold text-white">
                 Tech<span class="text-pink-500">Wave</span>
             </div>
-            <div class="flex items-center gap-10">
+             <input type="checkbox" id="menu-toggle" class="peer hidden">
+            <div class="hidden md:flex items-center gap-10">
                 <ul class="flex gap-8 text-m text-gray-300">
                     <li class="cursor-pointer hover:text-white">About</li>
                     <li class="cursor-pointer hover:text-white">Episodes</li>
@@ -28,6 +29,27 @@
        <img src="./assets/ArrowRight.png" alt="arrow" class="w-4 h-4 "> 
       </button>
             </div>
+           <!-- Hamburger -->
+        <button id="menu-btn" class="md:hidden">
+      <img src="./assets/hamburger-menu.png" class="w-7 h-7">
+    </button>
+  </div>
+ <!-- Mobile Menu -->
+  <div id="mobile-menu"
+       class="hidden md:hidden absolute top-20 left-0 w-full
+              bg-[#1A0B2E] border-t border-white/10">
+
+    <ul class="flex flex-col items-center gap-6 py-8 text-gray-300">
+      <li class="hover:text-white cursor-pointer">About</li>
+      <li class="hover:text-white cursor-pointer">Episodes</li>
+      <li class="hover:text-white cursor-pointer">Host</li>
+
+      <button
+        class="mt-4 px-8 py-3 rounded-full text-sm font-semibold text-white
+               bg-gradient-to-r from-pink-500 to-yellow-400">
+        Subscribe
+          </button>
+      </ul>
         </div>
      </nav>
      <!-- Hero section -->
@@ -241,5 +263,105 @@
              </div>
         </div>
     </section>
+    <!-- Meet the Host -->
+    <section class="w-full bg-[#230E3D] py-24">
+    <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-5xl font-bold text-white text-center mb-16">
+      Meet The Host
+    </h2>
+    <div class="bg-[#2E1455] rounded-3xl p-10 flex flex-col md:flex-row items-center gap-10">
+      <div class="shrink-0">
+        <img 
+          src="./assets/host.png" 
+          alt="Alex Kumar"
+          class="w-32 h-32 rounded-full object-cover"
+        />
+      </div>
+      <div class="text-white">
+        <h3 class="text-center lg:text-left text-2xl font-semibold mb-3">
+          Alex Kumar
+        </h3>
+        <p class="text-gray-300 text-sm leading-relaxed max-w-3xl mb-6">
+          Tech entrepreneur, productivity expert, and lifelong learner. Alex has been
+          in the tech industry for over 10 years, working with startups and Fortune
+          500 companies. Through TechWave, Alex shares insights from industry leaders
+          and practical advice for anyone looking to grow in tech.
+        </p>
+
+        <div class="flex items-center lg: gap-4">
+          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#3A1C63] hover:opacity-80 transition">
+            <img src="./assets/linkedin.png" alt="LinkedIn" class="w-4 h-4">
+          </a>
+
+          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#3A1C63] hover:opacity-80 transition">
+            <img src="./assets/x.png" alt="X" class="w-4 h-4">
+          </a>
+
+          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#3A1C63] hover:opacity-80 transition">
+            <img src="./assets/instagram.png" alt="Instagram" class="w-4 h-4">
+          </a>
+
+          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#3A1C63] hover:opacity-80 transition">
+            <img src="./assets/youtube.png" alt="YouTube" class="w-4 h-4">
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Footer Section -->
+<footer
+  class="w-full py-20
+         bg-[#1A0B2E]
+         bg-[url('./assets/footer-bg.png')]
+         bg-no-repeat bg-center bg-cover"
+>
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <h2 class="text-6xl md:text-6xl font-bold text-white mb-10">
+      Tech<span class="text-pink-500">Wave</span>
+    </h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center mb-10">
+
+      <a href="#" class="flex items-centerjustify-center gap-2 text-gray-300 hover:text-white transition">
+        <img src="./assets/spotify.png" class="w-5 h-5" alt="Spotify">
+        <span class="md:inline">Spotify</span>
+      </a>
+
+      <a href="#"
+   class="flex flex-col items-center justify-center gap-2
+          text-gray-300 hover:text-white transition">
+
+        <img src="./assets/apple-podcast.png" class="w-5 h-5" alt="Apple Podcast">
+        <span class="md:inline">Apple Podcasts</span>
+      </a>
+
+      <a href="#"
+   class="flex flex-col items-center justify-center gap-2
+          text-gray-300 hover:text-white transition">
+
+        <img src="./assets/youtube-podcast.png" class="w-5 h-5" alt="YouTube">
+        <span class="md:inline">YouTube</span>
+      </a>
+<a href="#"
+   class="flex flex-col items-center justify-center gap-2
+          text-gray-300 hover:text-white transition">
+
+        <img src="./assets/twitter.png" class="w-5 h-5" alt="Twitter">
+        <span class="md:inline">Twitter</span>
+      </a>
+
+    </div>
+
+    <p class="text-gray-200 text-m">
+      &copy 2026 TechWave Podcast. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
 </body>
 </html>
