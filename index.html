@@ -5,7 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Wave Podcast</title>
    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <style>
+@keyframes subscribePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(34, 197, 94, 0.0);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
+  }
+}
 
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-subscribe {
+  animation: subscribePulse 2.5s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+</style>
 </head>
 <body class>
     <!-- Navbar -->
@@ -31,7 +59,7 @@
             </div>
            <!-- Hamburger -->
         <button id="menu-btn" class="md:hidden">
-      <img src="./assets/hamburger-menu.png" class="w-7 h-7">
+      <img src="./assets/hamburger-menu.png" class="w-6 h-6">
     </button>
   </div>
  <!-- Mobile Menu -->
@@ -69,10 +97,24 @@
                     <img src="./assets/spotify.png" alt="Spotify" class="w-4 h-4">
                     <span>Listen on Spotify</span>
                 </button>
-                <button class="px-8 py-3 rounded-full text-sm font-semibold text-green-400 border border-green-400 flex items-center gap-2">
-                    <img src="./assets/message.png" alt="Message" class="h-4 w-4">
-                    <span>Subscribe</span>
-                </button>
+                <button
+  class="relative px-8 py-3 rounded-full text-sm font-semibold
+         text-green-400 border border-green-400
+         flex items-center gap-2
+         animate-subscribe
+         hover:scale-105 transition-transform duration-300">
+
+  <img src="./assets/message.png" alt="Message" class="h-4 w-4">
+  <span>Subscribe</span>
+
+  <!-- Glow layer -->
+  <span
+    class="absolute inset-0 rounded-full
+           bg-green-400/20 blur-xl
+           animate-glow -z-10">
+  </span>
+</button>
+
             </div>
         </div>
       </section>
@@ -87,7 +129,7 @@
                 <p class="mt-6 text-gray-300 text-base leading-relaxed">Join thousands of young professionals and tech enthusiasts who start their day with TechWave.   
                 </p>
                 <div class="mt-16 h-px w-full bg-white/10"></div>
-                <div class="mt-16 grid grid-cols-4 gap-20">
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-20">
                     <div>
                         <h3 class="text-5xl font-bold text-green-400">150K+</h3>
                         <p class="mt-2 text-xs tracking-widest text-gray-300">MONTHLY LISTENERS</p>
@@ -119,7 +161,7 @@
       <!-- Premium Audio (col 1, row 1-2) -->
       <div class="bg-[#2a0f45] rounded-2xl p-6
                   lg:col-start-1 lg:row-start-1 lg:row-span-2">
-        <img src="./assets/headphone.png" class="w-12 mb-4" />
+        <img src="./assets/headphone.png" class="w-14 mb-5" />
         <h3 class="text-white text-2xl font-bold mb-2">
           Premium Audio Quality
         </h3>
@@ -133,7 +175,7 @@
       <!-- Mobile Friendly (col 2-3, row 1) -->
       <div class="bg-[#2a0f45] rounded-2xl p-6
                   lg:col-start-2 lg:col-span-2 lg:row-start-1">
-        <img src="./assets/device.png" class="w-12 mb-4" />
+        <img src="./assets/device.png" class="w-14 mb-5" />
         <h3 class="text-white text-2xl font-bold mb-2">
           Mobile Friendly
         </h3>
@@ -145,7 +187,7 @@
       <!-- Global Community (col 2-3, row 2) -->
       <div class="bg-[#2a0f45] rounded-2xl p-6
                   lg:col-start-2 lg:col-span-2 lg:row-start-2">
-        <img src="./assets/location.png" class="w-12 mb-4" />
+        <img src="./assets/location.png" class="w-14 mb-5" />
         <h3 class="text-white text-2xl font-bold mb-2">
           Global Community
         </h3>
@@ -157,20 +199,19 @@
       <!-- Exclusive Interviews (col 1-2, row 3) -->
       <div class="bg-[#2a0f45] rounded-2xl p-6
                   lg:col-start-1 lg:col-span-2 lg:row-start-3">
-        <img src="./assets/zap-fast.png" class="w-12 mb-4" />
+        <img src="./assets/zap-fast.png" class="w-14 mb-5" />
         <h3 class="text-white text-2xl font-bold mb-2">
           Exclusive Interviews
         </h3>
         <p class="text-gray-200 text-m leading-relaxed">
-          Get unprecedented access to industry titans, startup founders, and
-          tech visionaries with exclusive conversations.
+          Get unprecedented access to industry titans, startup founders, and tech visionaries. Our host secures exclusive conversations you won't find anywhere else, diving deep into their journeys, failures, and success strategies.
         </p>
       </div>
 
       <!-- Rich Resources (col 3, row 3) -->
       <div class="bg-[#2a0f45] rounded-2xl p-6
                   lg:col-start-3 lg:row-start-3">
-        <img src="./assets/resource.png" class="w-12 mb-4" />
+        <img src="./assets/resource.png" class="w-14 mb-5" />
         <h3 class="text-white text-2xl font-bold mb-2">
           Rich Resources
         </h3>
